@@ -21,10 +21,6 @@ AuctionHouse allows players to list their items for sale and purchase items that
 >- MySQL and SQLite database support
 >- Custom listings limit per player (See permissions)
 >- Customizable messages
-
----  
-## Download  
-Download the plugin from [Poggit](https://poggit.pmmp.io/p/AuctionHouse) or [GitHub releases](https://github.com/Shock95x/AuctionHouse/releases)
   
 ---  
 ## Config  
