@@ -6,9 +6,7 @@ namespace shock95x\auctionhouse\menu\admin;
 
 use pocketmine\inventory\Inventory;
 use pocketmine\item\Item;
-use pocketmine\item\VanillaItems;
 use pocketmine\block\VanillaBlocks;
-use pocketmine\item\ItemTypeIds;
 use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 use shock95x\auctionhouse\AHListing;
@@ -36,11 +34,10 @@ class ManageListingMenu extends AHMenu{
 	public function renderButtons() : void{
 		parent::renderButtons();
 		$listing = $this->getListings()[0];
-		$duplicateItem = VanillaItems::EMERALD()->setCustomName(TextFormat::RESET . Locale::get($this->player, "duplicate-item"));
+		$duplicateItem = VanillaBlocks::EMERALD()->asItem()->setCustomName(TextFormat::RESET . Locale::get($this->player, "duplicate-item"));
 		$status = Locale::get($this->player, $listing->isExpired() ? "status-expired" : "status-active");
-		$listingStatus = VanillaItems::GOLD_INGOT()
-			->setCustomName(str_ireplace("{STATUS}", $status, implode("\n", preg_filter('/^/', TextFormat::RESET, Locale::get($this->player, "listing-status")))));
-		$deleteItem = VanillaItems::DIAMOND()->setCustomName(TextFormat::RESET . Locale::get($this->player, "delete-item"));
+		$listingStatus = VanillaBlocks::GOLD()->asItem()->setCustomName(str_ireplace("{STATUS}", $status, implode("\n", preg_filter('/^/', TextFormat::RESET, Locale::get($this->player, "listing-status")))));
+		$deleteItem = VanillaBlocks::REDSTONE()->asItem()->setCustomName(TextFormat::RESET . Locale::get($this->player, "delete-item"));
 
 		$this->inventory->setItem(self::INDEX_DUPLICATE, $duplicateItem);
 		$this->inventory->setItem(self::INDEX_STATUS, $listingStatus);
@@ -77,6 +74,13 @@ class ManageListingMenu extends AHMenu{
 		return parent::handle($player, $itemClicked, $inventory, $slot);
 	}
 
+    /**
+     * Not need for this class, cause this class extends AHMenu, and AHMenu already have method
+     * @deprecated
+     * @param Player $player
+     * @return void
+     * @author comment by XackiGiFF
+     */
 	public function onClose(Player $player) : void{
 		parent::onClose($player);
 	}

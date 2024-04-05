@@ -45,7 +45,7 @@ buttons:
   next: "minecraft:paper"
   info: "minecraft:book"
   howto: "minecraft:emerald"
-  return_all: "minecraft:air"
+  return_all: "minecraft:redstone_block"
   player_listings: "minecraft:diamond"
   expired_listings: "minecraft:poisonous_potato"
   admin_menu: "minecraft:redstone"
