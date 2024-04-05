@@ -1,0 +1,44 @@
+name: AuctionHouse_sindupe
+main: shock95x\auctionhouse\AuctionHouse
+version: 3.0.0
+api: 5.0.0
+author: Shock95x updated by IamFxr.lol
+softdepend: [BedrockEconomy]
+virions: ["InvMenu", "libasynql", "await-generator", "UpdateNotifier", "Commando"]
+permissions:
+    auctionhouse.command:
+        default: true
+        description: Allow players to use the AuctionHouse command
+    auctionhouse.command.about:
+        default: true
+        description: Allow players use about command
+    auctionhouse.command.convert:
+        default: true
+        description: Allow players to convert
+    auctionhouse.command.shop:
+        default: true
+        description: Allows player to open the shop menu
+    auctionhouse.command.sell:
+        default: true
+        description: Allows player to list an item
+    auctionhouse.command.listings:
+        default: true
+        description: Allows player to view listings
+    auctionhouse.command.expired:
+        default: true
+        description: Allows player to view their expired listings
+    auctionhouse.command.category:
+        default: true
+        description: Allows player to open the category menu
+    auctionhouse.command.admin:
+        default: op
+        description: Allows player to open the admin menu
+    auctionhouse.command.reload:
+        default: op
+        description: Allows player to reload configuration files
+    auctionhouse.sign.shop:
+        default: op
+        description: Allows player to make AH shop sign
+    auctionhouse.sign.listings:
+        default: op
+        description: Allows player to make signs for their listings
